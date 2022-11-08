@@ -1,0 +1,7 @@
+<% if  current_user %>
+<% else %>
+  <li><%= link_to 'Sign up', new_user_session_path %></li>
+  <li><%= link_to 'Sign in', user_session_path %></li>
+<% end %>
+
+<h1>Enjoy your  Moments with music</h1>
