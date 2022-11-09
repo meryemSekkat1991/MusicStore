@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/daisyui@2.14.1/dist/full.css" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,10 +12,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <script>
+    document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
+  </script>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <body>
+  <%= render "layouts/header" %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
