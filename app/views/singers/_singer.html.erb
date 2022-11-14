@@ -1,0 +1,17 @@
+<div id="<%= dom_id singer %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= singer.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Lastname:</strong>
+    <%= singer.lastname %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this singer", singer, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this singer', edit_singer_path(singer), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

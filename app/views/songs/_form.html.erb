@@ -13,17 +13,23 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title,  class: 'input input-bordered'  %>
   </div>
 
   <div>
-    <%= form.label :singer, style: "display: block" %>
-    <%= form.text_field :singer %>
+    <%= form.label :singer, style: "display: block"%>
+    <%= form.text_field :singer,  class: 'input input-bordered'  %>
   </div>
+
+  <select class="select select-bordered w-full max-w-xs mt-4">
+    <option disabled selected>Who shot first?</option>
+    <option>Han Solo</option>
+    <option>Greedo</option>
+  </select>
 
   <div>
     <%= form.label :kind, style: "display: block" %>
-    <%= form.text_field :kind %>
+    <%= form.text_field :kind, class: 'input input-bordered' %>
   </div>
 
   <div>
