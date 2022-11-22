@@ -2,22 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    './app/views/**/*.{slim,erb,jbuilder,turbo_stream,js}',
-    './app/decorators/**/*.rb',
     './app/helpers/**/*.rb',
-    './app/inputs/**/*.rb',
-    './app/assets/javascripts/**/*.js',
-    './config/initializers/**/*.rb',
-    './lib/components/**/*.rb'
-  ],
-  safelist: [
-    {
-      pattern: /bg-(red|green|blue|orange)-(100|200|400)/
-    },
-    {
-      pattern: /text-(red|green|blue|orange)-(100|200|400)/
-    },
-    'pagy-*'
+    './app/javascript/**/*.js',
+    './app/views/**/*',
   ],
   variants: {
     extend: {
@@ -30,6 +17,21 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal',
       square: 'square'
+    },
+    colors: {
+      'blue': '#1fb6ff',
+      'purple': '#7e5bef',
+      'pink': '#ff49db',
+      'orange': '#ff7849',
+      'green': '#13ce66',
+      'yellow': '#ffc82c',
+      'gray-dark': '#273444',
+      'gray': '#8492a6',
+      'gray-light': '#d3dce6',
+    },
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
     }
   },
   plugins: [

@@ -1,4 +1,3 @@
-<%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/daisyui@2.14.1/dist/full.css" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,22 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/daisyui@2.39.0/dist/full.css" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
-  <script>
-    document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
-  </script>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <body>
-  <%= render "layouts/header" %>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+     <%= render "layouts/header" %>
+      <main class="container mx-auto mt-28 h-screen">
+        <%= yield %>
+      </main>
+     <%= render "layouts/footer" %>
+
+    <script>
+      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
+    </script>
+
+    <%= javascript_importmap_tags %>
   </body>
 </html>

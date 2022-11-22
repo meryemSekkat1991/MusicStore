@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +16,31 @@
  *= require_tree .
  *= require_self
  */
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.w-10 {
+  width: 40px;
+}
+
+.h-10 {
+  height: 40px;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
