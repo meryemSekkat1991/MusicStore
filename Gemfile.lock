@@ -95,6 +95,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.11.0)
+    ffi (1.15.5)
     ffi (1.15.5-x64-mingw32)
     font-awesome-sass (6.2.0)
       sassc (~> 2.0)
@@ -133,7 +134,10 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x64-mingw32)
       racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.4)
     pg (1.4.4-x64-mingw32)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -177,6 +181,8 @@ GEM
       railties (>= 5.0)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     selenium-webdriver (4.6.1)
@@ -194,6 +200,8 @@ GEM
     stimulus-rails (1.1.1)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.19-x64-mingw32)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.19-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.0)
@@ -226,6 +234,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -251,4 +260,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.3.24
+   2.3.26
