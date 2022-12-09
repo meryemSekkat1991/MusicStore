@@ -48,28 +48,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_135855) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "play_lists", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_play_lists_on_user_id"
-  end
-
   create_table "singers", force: :cascade do |t|
     t.string "name"
     t.string "lastname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "songs", force: :cascade do |t|
-    t.string "title"
-    t.string "kind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "singer_id", null: false
-    t.index ["singer_id"], name: "index_songs_on_singer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,6 +71,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_135855) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "play_lists", "users"
-  add_foreign_key "songs", "singers"
 end
