@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :singers
   resources :songs
   get 'commonshare', to: redirect("https://www.commshare.com/")
   get 'contact', to: "pages#about"

@@ -3,6 +3,7 @@ class SongsController < ApplicationController
 
   # GET /songs or /songs.json
   def index
+    session[:user_id] = 4
     @songs = Song.all
   end
 
@@ -36,6 +37,7 @@ class SongsController < ApplicationController
 
   # PATCH/PUT /songs/1 or /songs/1.json
   def update
+    session[:sucsses] = "Songs edited sussefelly"
     respond_to do |format|
       if @song.update(song_params)
         format.html { redirect_to song_url(@song), notice: "Song was successfully updated." }

@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Hunger Games";
+  src: url("/assets/HungerGames.ttf") ;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,7 +21,9 @@
  *= require_tree .
  *= require_self
  */
-
+.body {
+  font-family: "Hunger Games", serif;
+}
 .rounded-full {
   border-radius: 50%;
 }
