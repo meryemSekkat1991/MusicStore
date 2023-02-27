@@ -5,6 +5,7 @@ class SingersController < ApplicationController
 
 
   def index
+    binding.pry
     @singers = Singer.all
   end
 
