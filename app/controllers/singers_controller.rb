@@ -40,6 +40,7 @@ class SingersController < ApplicationController
 
   # PATCH/PUT /singers/1 or /singers/1.json
   def update
+    flash[:success] = "singer updated !!"
     respond_to do |format|
       if @singer.update(singer_params)
         format.html { redirect_to singer_url(@singer), notice: "Singer was successfully updated." }

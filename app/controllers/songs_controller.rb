@@ -4,8 +4,16 @@ class SongsController < ApplicationController
   # GET /songs or /songs.json
   def index
     session[:user_id] = 4
+    cookies.signed[:username] = { value: "mima", expires: 1.month.from_now}
+    flash.now[:success] = "songs"
     @songs = Song.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+      format.xml { render xml: @songs}
+    end
   end
+
 
   # GET /songs/1 or /songs/1.json
   def show
@@ -24,29 +32,22 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
 
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to song_url(@song), notice: "Song was successfully created." }
-        format.json { render :show, status: :created, location: @song }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
+    if @song.valid?
+      respond_to do |format|
+        if @song.save
+          format.html { redirect_to song_url(@song), notice: "Song was successfully created." }
+          format.json { render :show, status: :created, location: @song }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @song.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   # PATCH/PUT /songs/1 or /songs/1.json
   def update
-    session[:sucsses] = "Songs edited sussefelly"
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to song_url(@song), notice: "Song was successfully updated." }
-        format.json { render :show, status: :ok, location: @song }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to songs_path, success: "updated successfully"
   end
 
   # DELETE /songs/1 or /songs/1.json
@@ -67,6 +68,6 @@ class SongsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def song_params
-      params.require(:song).permit(:title)
+      params.require(:song).permit(:title, :slug)
     end
 end

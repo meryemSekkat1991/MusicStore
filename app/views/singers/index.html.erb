@@ -9,6 +9,8 @@
   </div>
 
   <div id="singers" class="min-w-full">
-    <%= render @singers %>
+    <% @singers.each do |singer| %>
+      <%= singer.songs.map(&:title).join(',') %>
+    <% end %>
   </div>
 </div>

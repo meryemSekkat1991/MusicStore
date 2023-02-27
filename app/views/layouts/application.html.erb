@@ -13,13 +13,21 @@
 
   <body>
      <%= render "layouts/header" %>
-      <main class="container mx-auto mt-28 h-screen">
+      <main>
         <% if session[:sucsses] %>
           <div class="alert alert-success">
             <%= session[:sucsses] %>
           </div>
+          <% session.delete(:sucsses) %>
         <% end %>
-        <%= yield %>
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-<%= name %>">
+            <%= msg %>
+          </div>
+        <% end %>
+        <div class="container mx-auto mt-28 h-screen">
+          <%= yield %>
+        </div>
       </main>
      <%= render "layouts/footer" %>
 

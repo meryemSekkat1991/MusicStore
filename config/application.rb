@@ -21,5 +21,7 @@ module MusicStudio
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('/app/assets/fonts')
 
+    config.autoload_paths << "#{Rails.root}/app/models/validators"
+
   end
 end
